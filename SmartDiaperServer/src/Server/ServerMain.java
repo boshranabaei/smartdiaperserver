@@ -36,6 +36,10 @@ public class ServerMain {
 		ServHandler.addServlet(UpdateServlet.class, "/updatebabydata");
 		ServHandler.setBaseResource(Resource.newResource("."));
 
+		// ...Diaper Change Servlet
+		ServHandler.addServlet(ChangeServlet.class, "/diaperchanged");
+		ServHandler.setBaseResource(Resource.newResource("."));
+
 		
 		// Adding handlers to the server
 		HandlerList handlers = new HandlerList();
