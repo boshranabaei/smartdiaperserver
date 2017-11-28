@@ -16,7 +16,9 @@ public class ChangeServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		int babyId = Integer.parseInt(request.getParameter("BABY"));
-			
+		
+		babyId++; 
+
 		if (MySQLBridge.msql.changeBabyDiaper(babyId)) {
 			out.println("---Babay "+ babyId+" diaper got changed sucessfulluy---");
 		} else {
