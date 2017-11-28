@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class MySQLBridge {
 
-	static final String WIN_URL = "jdbc:sqlite:/root/smartdiaperserver/SmartDiaperServer/db/sdiaper.db";
+	static final String WIN_URL = "jdbc:sqlite:C:/5-Java/SmartDiaperServer/db/sdiaper.db";
 
 	static Baby[] babies = null;
 	Connection conn;

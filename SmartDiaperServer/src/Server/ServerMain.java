@@ -32,6 +32,11 @@ public class ServerMain {
 		ServHandler.addServlet(ResetServlet.class, "/resetdiapers");
 		ServHandler.setBaseResource(Resource.newResource("."));
 
+		// ...Update Servlet
+		ServHandler.addServlet(UpdateServlet.class, "/updatebabydata");
+		ServHandler.setBaseResource(Resource.newResource("."));
+
+		
 		// Adding handlers to the server
 		HandlerList handlers = new HandlerList();
 		handlers.setHandlers(new Handler[] { ServHandler });
