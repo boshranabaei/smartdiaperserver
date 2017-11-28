@@ -64,7 +64,7 @@ public class MySQLBridge {
 					babies[i].numDiapersToday += 1;
 					sql += ", numDiapersToday=" + babies[i].numDiapersToday;
 				}
-				sql += " WHERE userId ==" + (i+1) + ";";
+				sql += " WHERE userId ==" + (i + 1) + ";";
 				try {
 					stmt.executeUpdate(sql);
 				} catch (SQLException e) {
@@ -74,12 +74,20 @@ public class MySQLBridge {
 			}
 			babies[i].status = babies_status[i];
 		}
-
-		
-
 		return true;
-
 	}
+
+	// To update the baby status
+	public synchronized boolean changeBabyDiaper(int babyId) {
+		String sql = null;
+		sql = "UPDATE babies SET status=0 WHERE userId ==" + babyId+";";
+		try {
+			stmt.executeUpdate(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+	return true;}
 
 	// To update the baby status
 	public synchronized boolean resetDiapers() {
