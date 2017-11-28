@@ -16,7 +16,7 @@ public class BabyDataServlet extends HttpServlet {
 	public void init() throws ServletException {
 	}
 
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
 		Gson gson = new GsonBuilder().create();
 		PrintWriter out = response.getWriter();
